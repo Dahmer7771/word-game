@@ -1,16 +1,21 @@
 import React from "react";
-import { Container } from "@material-ui/core";
+import {
+    Container,
+} from "@material-ui/core";
+import {
+    Switch,
+    Route,
+} from "react-router-dom";
+import GameInput from "../game-input/game-input";
 
-const MainSection = (props) => {
-    const { children } = props;
-
-    return (
+const MainSection = () => (
+    <div className="main">
         <Container maxWidth="xl">
-            <div className="main">
-                {children}
-            </div>
+            <Switch>
+                <Route path="/play" component={GameInput} />
+            </Switch>
         </Container>
-    );
-};
+    </div>
+);
 
 export default MainSection;

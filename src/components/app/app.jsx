@@ -12,9 +12,8 @@ function App() {
         <div className="app">
             <CssBaseline />
             <Header />
-            <MainSection>
-                <Aside />
-            </MainSection>
+            <Aside />
+            <MainSection />
         </div>
     );
 }

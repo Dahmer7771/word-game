@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
-import { showMenu } from "../actions";
+import { showMenu } from "../../actions";
 import headerMuiTheme from "./header-mui-styles";
 
 const Header = ({ isMenuOpen, toShowMenu }) => {

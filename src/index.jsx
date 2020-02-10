@@ -12,7 +12,11 @@ import {
     deepOrange,
 } from "@material-ui/core/colors";
 import App from "./components/app/app";
-import store from "./components/store";
+import { YandexDictionaryProvider } from "./components/yandex-dictionary-context/yandex-dictionary-context";
+import { WordGameProvider } from "./components/word-game-context/word-game-context";
+import YandexDictionary from "./services/yandex-dictionary";
+import WordGameService from "./services/word-game-service";
+import store from "./store";
 
 const theme = createMuiTheme({
     palette: {
@@ -21,12 +25,19 @@ const theme = createMuiTheme({
     },
 });
 
+const yandexDictionary = new YandexDictionary();
+const wordGameService = new WordGameService();
+
 ReactDOM.render(
     <Provider store={store}>
         <ThemeProvider theme={theme}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
+            <YandexDictionaryProvider value={yandexDictionary}>
+                <WordGameProvider value={wordGameService}>
+                    <BrowserRouter>
+                        <App />
+                    </BrowserRouter>
+                </WordGameProvider>
+            </YandexDictionaryProvider>
         </ThemeProvider>
     </Provider>,
     document.getElementById("root"),

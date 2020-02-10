@@ -1,0 +1,5 @@
+.custom-link__wrapper a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
